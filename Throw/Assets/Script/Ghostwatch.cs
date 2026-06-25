@@ -1,0 +1,16 @@
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class Ghostwatch : MonoBehaviour
+{
+    [SerializeField] GameObject ghost;
+    [SerializeField] float onTime = 1f; // èoåªÇ∑ÇÈéûä‘
+    [SerializeField] float offTime = 1f; // è¡Ç¶ÇÈéûä‘
+    private float onTimer = 0f;
+    private float offTimer = 0f;
+
+    if(onTimer == onTime)
+    {
+        ghost
+    }
+}

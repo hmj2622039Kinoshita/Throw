@@ -6,7 +6,7 @@ public class MouseView : MonoBehaviour
     [SerializeField] float mouseHigh = -90f;
     [SerializeField] float mouseLow = 90f;
 
-    float xRotation =0f; // カメラの初期の上下の向いている位置（正面）
+    float xRotation = 0f; // カメラの初期の上下の向いている位置（正面）
     private void Start()
     {   // マウスの視点操作
         Cursor.lockState = CursorLockMode.Locked; // マウスカーソルを画面中央に固定する

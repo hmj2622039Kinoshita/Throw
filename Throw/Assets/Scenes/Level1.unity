@@ -503,8 +503,8 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 20
   m_Range: 12
-  m_SpotAngle: 33
-  m_InnerSpotAngle: 18
+  m_SpotAngle: 24.268291
+  m_InnerSpotAngle: 14.507317
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
     m_Type: 0
@@ -572,6 +572,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9217efd3a48ac564da12b022283c2534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ghost
+  player: {fileID: 1592960825}
+  runDistance: 6
+  moveSpeed: 2.6
   deathEffect: {fileID: 7571340213083841361, guid: 22c9aa740eb9e8b4295ef78caea9ddc5, type: 3}
 --- !u!1 &1138272302 stripped
 GameObject:
@@ -665,7 +668,7 @@ Transform:
   m_GameObject: {fileID: 1592960822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -3.035, y: 0.054, z: -1.672}
+  m_LocalPosition: {x: -3.22, y: 0.054, z: -1.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -686,7 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GlowItemThrow
   GlowItem: {fileID: 7897364375055279347, guid: 3ae2e400fc4f15b499e0833bdc98dd9f, type: 3}
   throwForce: 10.7
-  camera: {fileID: 2014979976}
+  playerCamera: {fileID: 2014979976}
 --- !u!1 &1627439629
 GameObject:
   m_ObjectHideFlags: 0

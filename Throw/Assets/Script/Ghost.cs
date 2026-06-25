@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Ghost : MonoBehaviour
-{]
+{
     [SerializeField] Transform player;
     [SerializeField] float runDistance = 7f;
     [SerializeField] float moveSpeed = 3f;
@@ -18,12 +19,13 @@ public class Ghost : MonoBehaviour
     private void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
-        if(run == true && distance <= runDistance)
+        Debug.Log(distance);
+        if (run == false && distance <= runDistance)
         {
             RunStart();
         }
 
-        if (run == false)
+        if (run == true && deathnum == false)
         {
             transform.position += runDirection * moveSpeed * Time.deltaTime;
             runTimer -= Time.deltaTime;
@@ -32,6 +34,13 @@ public class Ghost : MonoBehaviour
                 run = false;
             }
         }
+    }
+
+    void RunStart()
+    {
+        run = true;
+        runDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
+        runTimer = 2f;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,6 +55,7 @@ public class Ghost : MonoBehaviour
 
     IEnumerator Death()
     {
+        run = false;
         deathnum = true;
 
         float t = 0;
