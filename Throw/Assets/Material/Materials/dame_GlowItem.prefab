@@ -4849,7 +4849,7 @@ GameObject:
   - component: {fileID: 1045145569476354642}
   - component: {fileID: 7039613370480678994}
   m_Layer: 0
-  m_Name: GlowItem
+  m_Name: dame_GlowItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
