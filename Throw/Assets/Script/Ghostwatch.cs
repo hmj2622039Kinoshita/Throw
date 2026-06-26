@@ -9,8 +9,5 @@ public class Ghostwatch : MonoBehaviour
     private float onTimer = 0f;
     private float offTimer = 0f;
 
-    if(onTimer == onTime)
-    {
-        ghost
-    }
+   
 }
