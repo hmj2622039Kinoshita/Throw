@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class StartToRoad : MonoBehaviour
 {
-   void PlayButton()
+   public void PlayButton()
     {
         SceneManager.LoadScene("Road");
     }

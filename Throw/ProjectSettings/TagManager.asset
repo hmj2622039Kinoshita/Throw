@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - orb
+  - Ghost
   layers:
   - Default
   - TransparentFX

@@ -439,6 +439,8 @@ GameObject:
   - component: {fileID: 728509942}
   - component: {fileID: 728509944}
   - component: {fileID: 728509943}
+  - component: {fileID: 728509945}
+  - component: {fileID: 728509946}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -555,6 +557,41 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!136 &728509945
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728509941}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.75
+  m_Height: 17.38
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 7.9}
+--- !u!114 &728509946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728509941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5f7318c057f7643b5e564c7a53e5ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpotLight
 --- !u!1 &793333769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3346880562870294504, guid: 5d4863d3456c5524d9a3d53048a2c537, type: 3}
@@ -573,9 +610,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ghost
   player: {fileID: 1592960825}
-  runDistance: 6
-  moveSpeed: 2.6
+  runDistance: 2.72
+  moveSpeed: 1.93
   deathEffect: {fileID: 7571340213083841361, guid: 22c9aa740eb9e8b4295ef78caea9ddc5, type: 3}
+--- !u!114 &793333776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793333769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce6902df9a07494aa2df2d3d6402c03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ghostwatch
+  onTime: 1
+  offTime: 1
+  ghost: {fileID: 793333769}
 --- !u!1 &1138272302 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3961023467217747019, guid: 4b7e0d0fb7d6ffc4e93e6446089bc127, type: 3}
@@ -668,7 +720,7 @@ Transform:
   m_GameObject: {fileID: 1592960822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -3.22, y: 0.054, z: -1.98}
+  m_LocalPosition: {x: -1.76, y: 0.054, z: 6.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -848,6 +900,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LittleGhost_1
       objectReference: {fileID: 0}
+    - target: {fileID: 3346880562870294504, guid: 5d4863d3456c5524d9a3d53048a2c537, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 3589869544119516426, guid: 5d4863d3456c5524d9a3d53048a2c537, type: 3}
       propertyPath: m_IsKinematic
       value: 1
@@ -863,6 +919,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3346880562870294504, guid: 5d4863d3456c5524d9a3d53048a2c537, type: 3}
       insertIndex: -1
       addedObject: {fileID: 793333775}
+    - targetCorrespondingSourceObject: {fileID: 3346880562870294504, guid: 5d4863d3456c5524d9a3d53048a2c537, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 793333776}
   m_SourcePrefab: {fileID: 100100000, guid: 5d4863d3456c5524d9a3d53048a2c537, type: 3}
 --- !u!1001 &1957046698
 PrefabInstance:
