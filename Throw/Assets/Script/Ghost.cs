@@ -3,12 +3,11 @@ using System.Collections;
 
 public class Ghost : MonoBehaviour
 {
-    public int ghostDie = 0;
-
     [SerializeField] Transform player;
     [SerializeField] float runDistance = 7f;
     [SerializeField] float moveSpeed = 3f;
     [SerializeField] GameObject deathEffect;
+    [SerializeField] GameManager gm;
 
     private bool run = false;
     private Vector3 runDirection;
@@ -19,7 +18,6 @@ public class Ghost : MonoBehaviour
     private void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
-        Debug.Log(distance);
         if (run == false && distance <= runDistance)
         {
             RunStart();
@@ -43,14 +41,16 @@ public class Ghost : MonoBehaviour
         runTimer = 2f;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (deathnum == true) return; // 処理中にもう一回発動しないようにするために必要
 
         if(other.CompareTag("orb"))
         {
+            Debug.Log("オーブに当たった");
             StartCoroutine(Death());
-            ghostDie++;
+            Debug.Log(gm);
+            gm.Die();
         }
     }
 
