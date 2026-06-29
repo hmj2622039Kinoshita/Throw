@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections;
-using TMPro;
-using Unity.VisualScripting;
 
 public class Ghost : MonoBehaviour
 {
+    public int ghostDie = 0;
+
     [SerializeField] Transform player;
     [SerializeField] float runDistance = 7f;
     [SerializeField] float moveSpeed = 3f;
@@ -50,6 +50,7 @@ public class Ghost : MonoBehaviour
         if(other.CompareTag("orb"))
         {
             StartCoroutine(Death());
+            ghostDie++;
         }
     }
 

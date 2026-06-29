@@ -16,4 +16,6 @@ public class GlowItemThrow : MonoBehaviour
         Rigidbody rb = orb.GetComponent<Rigidbody>(); // orb‚Ì•¨—æ“¾
         rb.AddForce(dir * throwForce, ForceMode.Impulse);
     }
+
+    
 }
