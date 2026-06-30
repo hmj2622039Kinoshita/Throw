@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class ChargeItem : MonoBehaviour
 {
@@ -24,7 +23,7 @@ public class ChargeItem : MonoBehaviour
             charge += Time.deltaTime * chargeSpeed;
             charge = Mathf.Clamp01(charge);
             float t = Mathf.SmoothStep(0f, 1f, charge); // 滑らかにチャージ
-            transform.localScale = new Vector3(1f, 1f, 1f) * Mathf.Lerp(minScale, maxScale, t);
+            transform.localScale = new Vector3(1f, 1f, 1f) * Mathf.Lerp(minScale, maxScale, t);　// 最小サイズから最大まで
         }
         if(charge >= 1f)
         {

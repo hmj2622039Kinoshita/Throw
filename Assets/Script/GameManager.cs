@@ -38,10 +38,8 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Die呼ばれた");
         killCount++;
-        Debug.Log(killCount);
-        if(killCount >= clearCount)
+        if(killCount >= clearCount) // キル数が達したらシーン遷移
         {
             SceneManager.LoadScene("Clear");
         }

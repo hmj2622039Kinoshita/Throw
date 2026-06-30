@@ -3,66 +3,24 @@ using System.Collections;
 
 public class Ghost : MonoBehaviour
 {
-    //[SerializeField] Transform player;
-    //[SerializeField] float runDistance = 7f;
-    //[SerializeField] float moveSpeed = 3f;
     [SerializeField] GameObject deathEffect;
     [SerializeField] GameManager gm;
 
-    //private bool run = false;
-    //private Vector3 runDirection;
-    //private float runTimer;
-    //private Material mat;
-    // private Rigidbody rb;
     private bool deathnum = false; // 重複して死なないようにする（当たらないように）
-
-    // 壁との当たり判定つけれなかったから今回は却下
-    //private void Start()
-    //{
-    //    rb = GetComponent<Rigidbody>();
-    //}
-    //private void Update()
-    //{
-    //    float distance = Vector3.Distance(transform.position, player.position);
-    //    if (run == false && distance <= runDistance)
-    //    {
-    //        RunStart();
-    //    }
-
-    //    if (run == true && deathnum == false)
-    //    {
-    //        rb.MovePosition(rb.position + runDirection * moveSpeed * Time.deltaTime);
-    //        runTimer -= Time.deltaTime;
-    //        if(runTimer <= 0f)
-    //        {
-    //            run = false;
-    //        }
-    //    }
-    //}
-
-    //void RunStart()
-    //{
-    //    run = true;
-    //    runDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
-    //    runTimer = 2f;
-    //}
-
     public void OnTriggerEnter(Collider other)
     {
         if (deathnum == true) return; // 処理中にもう一回発動しないようにするために必要
 
-        if(other.CompareTag("orb"))
+        if(other.CompareTag("orb")) // オーブとの当たり判定
         {
-            Debug.Log("オーブに当たった");
             StartCoroutine(Death());
-            Debug.Log(gm);
             gm.Die();
         }
     }
 
     IEnumerator Death()
     {
-        deathnum = true;
+        deathnum = true;　// 死んだかどうか
 
         float t = 0;
         Vector3 startScale = transform.localScale;
